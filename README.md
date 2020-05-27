@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# flatchat_backend
-Chat for Flatiron!
-=======
 # User Stories
 - As a user, I want to log in
 - As a user, I want to see a list of conversations
@@ -113,4 +109,3 @@ Chat for Flatiron!
     - Testing
 - Friday
     - Prepare presentation
->>>>>>> d4798dcdee8c49ccbf810efbd42e9c3f7087c265
