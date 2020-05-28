@@ -9,11 +9,9 @@ class UsersController < ApplicationController
     def create
         @user = User.create(user_params)
         if @user.valid?
-            # serialized_user = ActiveModelSerializers::Adapter::Json.new(UserSerializer.new(user)).serializable_hash
-            # ActionCable.server.broadcast 'users_channel', serialized_user
-            # head :ok
+            UserConversation.create(user_id: @user.id, conversation_id: Conversation.first.id)
             @token = encode_token({ user_id: @user.id })
-            render json: { user: UserSerializer.new(@user), jwt: @token }, status: :created
+            render json: { jwt: @token }, status: :created
         else
             render json: { error: 'failed to create user' }, status: :not_acceptable
         end
